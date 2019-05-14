@@ -78,6 +78,23 @@ SHIELD should be available at http://localhost:9009/; you can
 visit that in your browser, or hit it via the CLI.  The default
 admin (failsafe) credentials are `admin` / `password`.
 
+Firefox has this wonderful thing called _Responsive Mode_.  It's
+actually for testing out mobile platforms without needing one of
+every phone / tablet / phablet that has ever been made, but it has
+a few interesting features that make it ideal for distributed
+screenshot taking:
+
+  1. It allows you to set the screen dimensions
+  2. It has a _screenshot_ button
+
+You can access it via the context menu > Web Developer >
+Responsive Design Mode.  If you prefer shortcuts, its ⌥⌘ (at least
+on macOS).
+
+All screenshots are 1200px wide, unless you have a very good
+reason to need something smaller.  Scrensshots should be as tall
+as necessary to show what needs showing, but no taller.
+
 
 The Document Landscape
 ----------------------
