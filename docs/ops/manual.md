@@ -863,17 +863,42 @@ How Do I Backup _X_?
 
 ### SHIELD Itself
 
+In a disaster recovery situation, it's important to get shield up and running to begin recovering your other data systems
+as soon as possible. It requires backups of SHIELD itself.
+
+#### How do SHIELD backups work? 
+
+The SHIELD state exists as 3 entities found in /var/vcap/store/shield (for a shield deployed by bosh).
+They Include:
+  - The SHIELD database which exists as a sqlite database name shield.db
+  - The vault.crpyt file
+  - The vault directory
+
+We use the file system plugin to backup these 3 items and store them as our SHIELD backup. When using the fs plugin to backup
+shield make sure `Strict Mode` is unchecked. We do this to prevent failures with missing files which can happen with the presence
+or absence of the `shield.db-journal`.
+
 #### The Problem With Encryption
 
-TBD
-
-#### The Important Bits of SHIELD
-
-TBD
+SHIELD backups *must* be taken with fixed key encryption. In this situation of restoring shield, we cannot use generated
+encryption keys because there is no way to restore our vault with keys that exist in that sealed vault. This is why it's
+important to keep the fixed key generated when you initialize SHIELD in a safe and retrievable place.  
 
 #### Configuring the `fs` Plugin
 
-TBD
+Lets walk through creating a SHIELD backup from the shield webui.
+
+#### For the properties make sure you're targeting the agent on the SHIELD box and the correct path.
+
+  ![Recover](shield-recover2.png)
+
+#### Make sure to de-select `Randomize Encryption Keys`
+
+  ![Recover](shield-recover4.png)
+
+#### Lets double check our configuration is correct
+
+  ![Recover](shield-recover5.png)
 
 #### "Normal-mode" Restores
 

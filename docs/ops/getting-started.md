@@ -71,11 +71,25 @@ Your First Backup Job
 
 
 
-
 Restoring the Data
 ------------------
 
 
+Backing up SHIELD Itself
+------------------------
+In a disaster recover situations is important to get shield back up and
+running as soon as possible to facilitate the restore of the your other
+systems.
+
+    "Name": "SHIELD"
+    "Notes": "SHIELD Backup"
+    "Agent": "alex-lab-shield/shield@z1/0"
+    "Backup Plugin": "Local Filesystem (fs)"
+    "Base Directory": "/var/vcap/store/shield"
+    "Files to Include": <blank>*
+    "Files to Exclude": <blank>*
+    "Fixed-Key Encryption?": <checked>
+    "Strict Mode": <unchecked>
 
 
 [1]: https://docs.docker.com/compose/overview/

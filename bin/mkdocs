@@ -83,7 +83,7 @@ nav {
   padding-right: 2em;
 }
 #main {
-  max-width: 35em;
+  max-width: 62.5vw;
   padding-left: 25vw;
   margin: 2em auto;
 }
@@ -94,6 +94,10 @@ p, ul, ol, blockquote {
   font-size: 13.5pt;
   color: #333;
 }
+p > img:first-child{
+  max-width: 100%
+}
+
 ul ul {
   margin: 0.4em 0;
 }
